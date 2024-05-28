@@ -1,0 +1,216 @@
+
+\documentclass[b5paper, openany]{ctexbook}
+
+\usepackage[colorlinks=true, linkcolor=black]{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+
+
+
+% \usepackage{physics}
+\usepackage{pifont}
+\usepackage[perpage,symbol*]{footmisc}
+\DefineFNsymbols{circled}{{\ding{192}}{\ding{193}}{\ding{194}}
+{\ding{195}}{\ding{196}}{\ding{197}}{\ding{198}}{\ding{199}}{\ding{200}}{\ding{201}}}
+\setfnsymbol{circled}
+
+
+
+\usepackage{amsmath,amsfonts,mathrsfs,amssymb}
+\usepackage{graphicx}
+
+\usepackage[font=bf,labelfont=bf,labelsep=quad]{caption}
+
+\usepackage{tikz, pstricks}
+%\usepackage{nicematrix}
+\usepackage{bookmark}
+\usepackage{ntheorem}
+\theoremseparator{\;}
+
+
+
+\usepackage{blkarray}
+\usepackage{bm}
+
+
+\usepackage{enumerate}
+
+
+\theoremstyle{plain}
+\theoremheaderfont{\normalfont\bfseries} 
+\theorembodyfont{\normalfont}
+
+
+\usepackage[framemethod=tikz]{mdframed}
+
+% \usepackage{circuitikz}
+
+\newtheorem{example}{\bf 例}[chapter]
+\newenvironment{solution}{\noindent {\bf 解：}}{}  %{\hfill $\clubsuit$\par}
+\newenvironment{analyze}{\noindent {\bf 分析：}}{}
+\newenvironment{rmk}{\noindent {\bf 注意：}}{}
+\newenvironment{note}{\noindent {\bf 说明：}}{}
+
+
+
+\renewcommand{\proofname}{\bf 证明：}
+\newenvironment{proof}{{\noindent \bf 证明：}}{}%{\hfill $\square$\par}
+
+\newcommand{\E}{\mathbb{E}}
+\renewcommand{\Pr}{\mathbb{P}}
+\newcommand{\EP}{\mathbb{E}^{\mathbb{P}}}
+\newcommand{\EQ}{\mathbb{E}^{\mathbb{Q}}}
+\newcommand{\dif}{\,{\rm d}}
+\newcommand{\Var}{{\rm Var}}
+\newcommand{\Cov}{{\rm Cov}}
+\newcommand{\x}{\times}
+
+ \usepackage{tcolorbox}
+ \tcbuselibrary{breakable}
+ \tcbuselibrary{most}
+
+
+
+\newtcolorbox{ex}[1][]
+  {colback = white, colframe = cyan!75!black, fonttitle = \bfseries,
+    colbacktitle = cyan!85!black, enhanced,
+    attach boxed title to top center={yshift=-2mm},breakable, 
+    title=练习, #1}
+
+\newtcolorbox{blk}[2][]
+  {colback = white, colframe = magenta!75!black, fonttitle = \bfseries,
+    colbacktitle = magenta!85!black, enhanced,
+    attach boxed title to top left={xshift=5mm, yshift=-2mm},breakable, 
+    title=#2, #1}
+
+
+\setcounter{tocdepth}{2}
+
+\setcounter{secnumdepth}{3}
+
+
+
+\ctexset {
+section = {
+	name = {第,节},
+ 	number = \chinese{section}},
+subsection = {
+	name = {,、\hspace{-1em}},
+	number = \chinese{subsection}
+},
+subsubsection = {
+	name = {（,）\hspace{-1em}},
+	number = \chinese{subsubsection},
+}
+}
+
+
+
+\renewcommand{\contentsname}{目~~录}
+
+\newcommand{\poly}{\polynomial[reciprocal]}
+
+
+
+\usepackage{mathtools}
+
+\setlength{\abovecaptionskip}{0.cm}
+\setlength{\belowcaptionskip}{-0.cm}
+
+\usetikzlibrary{decorations.pathmorphing, patterns}
+\usetikzlibrary{calc, patterns, decorations.markings}
+\usetikzlibrary{positioning, snakes}
+
+\newcommand{\Lim}{\displaystyle\lim}
+
+\usepackage{yhmath}
+\usepackage{longdivision}
+\usepackage{polynom}
+\usepackage{polynomial}
+\usepackage{multicol}
+
+\renewcommand{\frac}{\dfrac}
+\newcommand{\oc}{$^{\circ}{\rm C}$}
+\usepackage{longtable}
+\usepackage{tkz-euclide, tkz-base}
+\newcommand{\NC}{\text{N}/\text{C}}
+\newcommand{\ms}{\text{m}/\text{s}}
+\newcommand{\cms}{\text{cm}/\text{s}}
+\newcommand{\msq}{\text{m}/\text{s}^2}
+\newcommand{\cmsq}{\text{cm}/\text{s}^2}
+\newcommand{\kmh}{\text{km}/\text{h}}
+\newcommand{\Int}{\displaystyle\int}
+\usepackage{cases}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\VEC}{\overrightarrow}
+\renewcommand{\Pr}{\mathbb{P}}
+
+\newcommand{\comb}[2]{{\rm C}^{#1}_{#2}}
+\newcommand{\perm}[2]{{\rm P}^{#1}_{#2}}
+\newcommand{\rep}[2]{{\rm H}^{#1}_{#2}}
+\newcommand{\pc}[1]{\cos{#1}+i\sin{#1}}
+\newcommand{\pcx}[1]{\cos\left(#1\right)+i\sin\left(#1\right)}
+
+
+
+
+\begin{document}
+%\fontsize{10.5}{11}\selectfont
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\title{\Huge\bfseries 中学数学实验教材\\第六册（上）}
+
+
+
+\author{\Large 中学数学实验教材编写组编}
+\date{\Large 1986年5月}
+
+\maketitle
+
+
+
+
+\frontmatter
+
+% \input{preface.tex}
+\tableofcontents
+
+
+\mainmatter
+
+\input{1.tex}
+
+\input{2.tex}
+\input{3.tex}
+\input{4.tex}
+
+
+
+\backmatter
+
+\input{app.tex}
+
+
+
+
+
+
+
+
+
+\end{document}
