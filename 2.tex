@@ -258,7 +258,7 @@ $\perm{5}{5}=5!=5\cdot 4\cdot 3\cdot 2\cdot 1=120$
 \end{enumerate}
 \end{ex}
 
-\section{组合}
+\subsection{组合}
 我们知道，从一个学习小组中选出正、副组长各1人，这种选法是排列问题.如果改变为从一个学习小组中选出代表2人参加学校的学代会，有多少种不同的选法？”这时的代表无所谓正、副之分，就无先后顺序的意义了，也就不成为排列的问题了.
 
 又例如从1, 2, 3, 4, 5五个数选出两个数字相乘，问有多少个不同的乘积？那么只要所选出的数字是3和5；它们的积只有15，至于是$5\x3$还有$3\x5$，那是不要求加以区别的，也是没有排列次序的区别的.
@@ -1007,7 +1007,7 @@ $$\sum _{k= 0}^{n}a_{k} x^{n- k}= a_{0} x^{n}+ a_{1} x^{n- 1}+ \cdots + a_{n- 1}
 \end{enumerate}
 \end{ex}
 
-\section{二项式定理}
+\subsection{二项式定理}
 下面我们用数学归纳法来证明二项式定理。我们已经知道：
 \[\begin{split}
 (x+y)^1&=x+y\\
@@ -1117,148 +1117,357 @@ $$\sum _{k= 0}^{n}a_{k} x^{n- k}= a_{0} x^{n}+ a_{1} x^{n- 1}+ \cdots + a_{n- 1}
 \end{center}
 表中每行两端都是1，而且除1以外的每一个数都等于它肩上两个数的和，这个表叫做杨辉三角，它首先载于我国宋朝数学家杨辉1261年所著的《详解九章算法》一书．
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{example}
+展开$\left(1{+\frac{1}{x}}\right)^5$
+\end{example}
+
+
+\begin{solution}
+\[\begin{split}
+    \left(1{+\frac{1}{x}}\right)^5 &=1+5\left(\frac{1}{x}\right)+10\left(\frac{1}{x}\right)^2+10\left(\frac{1}{x}\right)^3+5\left(\frac{1}{x}\right)^4+\left(\frac{1}{x}\right)^5\\
+    &=1+\frac{5}{x}+\frac{10}{x^2}+\frac{10}{x^3}+\frac{5}{x^4}+\frac{1}{x^5}
+\end{split}\]
+\end{solution}
+
+\begin{example}
+    展开$\left(2\sqrt{x}-\frac{1}{\sqrt{x}}\right)^6$
+\end{example}
+
+\begin{solution}
+\[\begin{split}
+    \left(2\sqrt{x}-\frac{1}{\sqrt{x}}\right)^6&=\left(\frac{2x-1}{\sqrt{x}}\right)^6 =\frac{1}{x^3}(2x-1)^6\\
+&=\frac{1}{x^3}\left[(2x)^6-\comb{1}{6}(2x)^5+\comb{2}{6}(2x)^4-\comb{3}{6}(2x)^3+\comb{4}{6}(2x)^2\right.\\
+&\qquad \qquad \left.-\comb{5}{6}(2x)+\comb{6}{6}\right]\\
+&=\frac{1}{x^3}\left[64x^6-6\cdot 32x^5+15\cdot 16x^4-20\cdot 8 x^3+15\cdot 4x^2\right.\\
+&\qquad \qquad \left.-6\cdot 2x+1\right]\\
+&=64x^3-192x^2+240x-160+\frac{60}{x}-\frac{12}{x^2}+\frac{1}{x^3}
+\end{split}\]
+\end{solution}
+
+\begin{example}
+    求$(x+a)^{12}$的展开式中的第四项和倒数第四项。
+\end{example}
+
+\begin{solution}
+    展开式的通项公式$\mathrm{T}_{k+1}=\mathrm{C}_n^k x^{n-k}y^k$。所以
+$$\mathrm{T}^{4}=\mathrm{C}_{12}^{3} x^{12-3} a^{3}=\frac{12\times11\times 10}{3\times2}x^{9} a^{3}=220x^{9} a^{3}$$
+又展开式共$12+1=13$, 故倒数第四项是
+$$\mathrm{T}_{10}=\mathrm{C}_{12}^{9} x^{12-9} a^{9}=\mathrm{C}_{12}^{3}x^{3} a^{9}=220x^{9} a^{3}$$
+\end{solution}
+
+\begin{example}
+  求$(x-\frac{1}{x})^{9}$展开式中$x^3$的系数，有设有$x^{0}$项，如
+果有，试求出该项来。  
+\end{example}
+
+\begin{solution}
+    展开式的通项是：
+$$T_{k+1} = ( -1 )^{k} C_{9}^{k} x^{9-k} (\frac{1}{x})^{k}=( -1)^{k} C_{9}^{k} x^{9-k-k}$$
+依题意有，$9-2k=3$, 所以$k=3$. 因此$x^3$的项系数是
+$$( -1 )^{3}{\rm C}_{9}^{3}=- \frac{9\times8\times7}{3\times2}=- 84$$
+
+又若$9-2k=0$, 即$2k=9$, 方程没有整数解，故展开式
+里没有$x^0$项.
+\end{solution}
+
+\begin{example}
+   在$\left(a+\frac1a\right)^{2n}$的展开式里，已知第四项和第六项
+系数相等，求展开式里不含有$a$的项. 
+\end{example}
+
+\begin{solution}
+因为
+\[\begin{split}
+    {\rm T}_4&=\comb{3}{2n}a^{2n-3}\frac{1}{a^2}=\comb{3}{2n}a^{2n-4}\\
+    {\rm T}_6&=\comb{5}{2n}a^{2n-5}\frac{1}{a^5}=\comb{5}{2n}a^{2n-10}
+\end{split}\]
+依题意得$\comb{3}{2n}=\comb{5}{2n}$，即$\comb{2n-3}{2n}=\comb{5}{2n}$，所以
+\[2n-3=5,\quad 2n=8,\quad n=4\]
+故所给的二项式是$\left(a+\frac{1}{a}\right)^8$
+
+因为${\rm T}_{k+1}=\comb{k}{8}a^{8-k}\frac{1}{a^k}=\comb{k}{8}a^{8-2k}$，
+若${\rm T}_{k+1}$为不含$a$项，则$8-2k=0$，所以$k=4$.
+\[{\rm T}_5=\comb{4}{8}\cdot a^0=\frac{8\x 7\x 6\x 5}{4\x 3\x 2}=70\]
+\end{solution}
+
+\begin{ex}
+\begin{enumerate}
+    \item 展开$(x^{3}-2x)^{7}$
+    \item 求$(a+\sqrt{b})^{12}$的展开式里的第4项和第9项
+    \item \begin{enumerate}[(1)]
+        \item 求$(x+a)^{12}$的展开式里的中间一项；
+        \item 求$\left(\frac x2+\frac2x\right)^7$的展开式里的中间两项.
+    \end{enumerate}  
+    \item 在$(x+a)^{10}$的展开式里，求
+\begin{multicols}{2}
+    \begin{enumerate}[(1)]
+        \item 含有$a^{8}$的项；
+        \item 含有$x^8$的项. 
+    \end{enumerate}    
+\end{multicols}
+
+    \item 在$\left(x^{2}+\frac{1}{x^3}\right)^{15}$的展开式里，有没有
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item 不含$x$的项？
+        \item 含有$x^{8}$的项？
+    \end{enumerate}
+\end{multicols}
+如果有，把这项求出来.
+    
+\item 求$\left(3x+\frac{1}{\sqrt[3]{x}}\right)^{8}$的展开式里的常数项. 
+\item 已知$\left(\sqrt[8]{a^{2}}+\frac1a\right)^{n}$的展开式里的第3项含有$a^2$,    
+    求$n$.
+\end{enumerate}
+\end{ex}
+
+\subsection{二项式的性质}
+
+我们研究二项式$(x+y)^n$的展开式中各项系数的性质。二项展开式各项系数是：
+\[\comb{0}{n},\;\comb{1}{n},\;\comb{2}{n},\;\ldots,\; \comb{n-1}{n},\;\comb{n}{n}\]
+
+展开式各项系数有下列性质
+\begin{enumerate}
+\item 在二项展开式中，与首末两端“等距离”的两项数相等. 我们已知$\comb{m}{n}=\comb{n-m}{n}$，所以:
+\[\comb{0}{n}=\comb{n}{n},\; \comb{1}{n}=\comb{n-1}{n},\; \comb{2}{n}=\comb{n-2}{n},\; \ldots,\; \comb{k}{n}=\comb{n-k}{n},\ldots\]
+\item 如果二项式的幂指数是偶数，中间一项的系数大，如果二项式的幂指数是奇数，中间两项系数相同并且大.
+\end{enumerate}
+
+由于展开式各项系数顺次是
+\[\comb{0}{n}=1,\quad \comb{1}{n}=n,\quad \comb{2}{n}=\frac{n(n-1)}{1\cdot 2},\ldots\]
+\[\comb{k}{n}=\frac{n(n-1)(n-2)\cdots(n-k+1)}{1\cdot 2\cdot 3\cdots k},\ldots,\quad \comb{n}{n}=1\]
+其中，后一个系数的分子是前一个系数的分子乘以逐次减小1的数，(如$n,\; n-1,\; n-2,\; \ldots$), 分母是乘以逐次增大1的数(如$1,2,3,\ldots$)得到的，因而，各项系数从开始起总是逐渐增大，又因为与首末两端“等距离”的两项系数相等，所以系数增大到某一项时就逐渐减小，而最大项必在中间.
+
+当$n$是偶数时，$n+1$是奇数，展开式共有$n+1$项，所以
+展开式有中间一项，即第($\frac{n}{2}+1$)项，并且系数最大。
+
+当$n$是奇数时，$n+1$是偶数，展开式共有$n+1$项，所以有中间两项，即第($\frac{n+1}2$)和第($\frac{n+1}2+1$)两项，系数相同并且最大.
+
+\begin{example}
+    求$(x+y)^{10}$和$(x+y)^{11}$的最大系数的项.
+\end{example}
+
+\begin{solution}
+    $(x+y)^{10}$最大系数项的项数是
+$\frac{10}{2}+1=6$，所以
+$$\mathrm{T}_{6}=\mathrm{C}_{10}^{5} x^{10-5}y^{5}=252x^{5}y^{5}$$
+
+$(x+y)^{11}$最大系数的项 数是$\frac{11+1}{2}=6$或$6+1=7$, 所以
+\[\begin{split}
+    \mathrm{T}_{6}&=\mathrm{C}_{11}^{5}x^{11-5}y^{5}=462x^{6}y^{5}\\
+    \mathrm{T}_{7}&=\mathrm{C}_{11}^{6}x^{11-6}y^{6}=462x^{5}y^{6}
+\end{split}\]
+\end{solution}
+
+\begin{example}
+    在$(5x+2y)^{29}$展开式中第几项的系数最大，并
+求它的系数。
+\end{example}
+
+\begin{solution}
+    设$T_{k+1}$系数最大，则它必须满足
+\[\begin{cases}
+\frac{{\rm T}_{k+1}\text{系数}}{{\rm T}_{k}\text{系数}}=\frac{\comb{k}{29}5^{29-k}2^k}{\comb{k-1}{29}5^{29-k+1}2^{k-1}}=\frac{2(29-k+1)}{5k}\ge 1\\
+\frac{{\rm T}_{k+1}\text{系数}}{{\rm T}_{k+2}\text{系数}}=\frac{\comb{k}{29}5^{29-k}2^k}{\comb{k+1}{29}5^{29-k-1}2^{k+1}}=\frac{5(k+1)}{2(29-k)}\ge 1\\
+\end{cases}\]
+即
+$\begin{cases}
+    7k\le 60\\
+    \frac{53}{7}\le k\le 29
+\end{cases}$
+
+解得$7\frac{4}{7}\le k\le 8\frac{4}{7}$. 因为$k$为正整数，故$k=8$，即系数最大项系数是
+\[{\rm T}_{8+1}=\comb{8}{29}5^{29-8}\cdot 2^8=\comb{8}{29}5^{21}\cdot 2^8\]
+\end{solution}
+
+\begin{example}
+    求证：$\sum\limits^n_{k=0}\comb{k}{n}=\comb{0}{n}+\comb{1}{n}+\comb{2}{n}+\cdots+\comb{n-1}{n}+\comb{n}{n}=2^n$
+\end{example}
+
+\begin{proof}
+在二项式公式中取$x=y=1$，有：
+\[(1+1)^n=\sum^n_{k=0}\comb{k}{n}1^{n-k}1^k=\sum^n_{k=0}\comb{k}{n}\]
+所以$\sum\limits^n_{k=0}\comb{k}{n}=2^n$
+\end{proof}
+
+\begin{example}
+证明在$(x+y)^n$展开式中，奇数项系数的和等于
+偶数项系数的和.
+\end{example}
+
+\begin{proof}
+    在二项式公式中取$x=1$, $y=-1$，有
+    \[(1-1)^n=\sum^n_{k=0}(-1)^k\comb{k}{n}1^{n-k}1^k=\sum^n_{k=0}(-1)^k\comb{k}{n}\]
+即
+\[0=\left(\comb{0}{n}+\comb{2}{n}+\cdots\right)-\left(\comb{1}{n}+\comb{3}{n}+\cdots\right)\]
+所以
+\[\comb{0}{n}+\comb{2}{n}+\cdots=\comb{1}{n}+\comb{3}{n}+\cdots\]
+\end{proof}
+
+\begin{example}
+求证：$\sum\limits^n_{k=1}2k\comb{k}{n}=n\cdot 2^n$
+\end{example}
+
+\begin{proof}
+因为
+\[\begin{split}
+    k\comb{k}{n}&=k\cdot \frac{n(n-1)\cdots (n-k+1)}{k!}\\
+    &=n\cdot \frac{(n-1)(n-2)\cdots (n-k+1)}{(k-1)!}=n\comb{k-1}{n-1}
+\end{split}\]
+所以
+\[\sum^n_{k=1}2k\comb{k}{n}=2\sum^n_{k=1}k\comb{k}{n}=2n\sum^{n-1}_{k=0}\comb{k}{n-1}=2n\cdot 2^{n-1}=n\cdot 2^n\]
+\end{proof}
+
+
+\begin{example}
+    计算$(1.009)^{20}$和$(0.991)^{5}$的近似值（精确到0.001)
+\end{example}
+
+\begin{solution}
+\[\begin{split}
+    (1.009)^{20}&=(1+0.009)^{20}\\
+&=1+20\x0.009+190\x(0.009)^2+1140\x(0.009)^3+\cdots\\
+&=1+0.18+0.01539+0.00083106+\cdots
+\end{split}\]
+可以看出，要使所求的近似值的误差不超过0.001，需取展开式中前三项的和，就是
+\[\begin{split}
+(1..009)^{20}&\approx 1+0.18+0.01539\approx 1.195\\
+(0.991)^5&=(1-0.009)^5=1-5\x0.009+10\x(0.009)^2+\cdots    
+\end{split}\]
+根据精确度要求，第三项以后各项都可以删去，所以，
+\[(0.991)^5\approx 1-0.045=0.955\]
+\end{solution}
+
+\begin{ex}
+\begin{enumerate}
+    \item 求二项展开式里系数最大的项，（系数只需用组合数符号表示，不必算出）：
+\begin{multicols}{2}
+\begin{enumerate}[(1)]
+    \item $(a+b)^{10}$
+    \item $(1+x)^{17}$
+\end{enumerate}
+\end{multicols}
+    \item  应用二项式定理展开$(x^2+2x+2)^5$
+    \item  $(x+y)^{2n}$的展开式里如果第5项的系数与第13项的系数相等，求展开式里系数最大的项（系数用组合符号表示，不必算出）.
+    \item  求$(1-x)^{13}$的奇次项系数的和.
+    \item 证明：$\comb{0}{n}+\comb{2}{n}+\comb{4}{n}+\cdots+\comb{n}{n}=2^{n-1}$（$n$为偶数）
+    \item 计算$(3.002)^0$和$(3.998)^5$误差不超过0.001的近似值.
+\end{enumerate}
+\end{ex}
+
+\section*{习题2.3}
+\begin{enumerate}
+    \item 用二项式定理展开。
+\begin{multicols}{2}
+\begin{enumerate}[(1)]
+    \item $\left( \frac {\sqrt {x}}2- \frac 2{\sqrt {x}}\right) ^{7}$
+    \item $\left( \frac {x^{2}}2+ \frac {3}{x}\right) ^{8}$
+\end{enumerate}    
+\end{multicols}
+\item 化简：
+\begin{enumerate}[(1)]
+    \item $(1+\sqrt{x})^{5}+(1-\sqrt{x})^{5}$
+    \item $\left( 2x^{\tfrac 12}+ 3x^{- \tfrac 12}\right) ^{4}- \left( 2x^{\tfrac 12}- 3x^{\tfrac 12}\right) ^{4}$
+\end{enumerate}
+\item \begin{enumerate}[(1)]
+    \item 求$(1-2x)^{15}$的展开式中前四项；
+    \item 求$(2a^{3}-2b^{2})^{10}$的展开式中第11项;
+    \item 求$\left(\frac{\sqrt{x}}{3}+\frac{3}{\sqrt{x}}\right)^{12}$的展开式的中间一项;
+\item 求$(x\sqrt{y}-y\sqrt{x})^{15}$的展开式的中间两项.
+\end{enumerate}
+\item 求下列各式的展开式中指定各项的系数。
+\begin{enumerate}[(1)]
+    \item $\left( 1- \frac 1{2x}\right)^{10}$含$\frac1{x^5}$的项；
+    \item $\left(2x^{3}-\frac{1}{2x^{2}}\right)^{10}$的常数项.
+\end{enumerate}
+ 
+\item \begin{enumerate}[(1)]
+    \item $\left({\sqrt {x}} + \frac 1{\sqrt [3]{x^{2}}}\right) ^{n}$的展开式里第5项系数与
+第3项系数的比是7:2, 求展开式里含有$x$的项.
+\item 已知$(1+x)^n$的展开式里第四项与第八项的系数相等，求这两项的系数.
+\end{enumerate}
+
+\item \begin{enumerate}[(1)]
+    \item 求$\left(\frac{x}{y}-\frac{y}{x}\right)^{13}$展开式里系数最大的项.
+    \item 写出$\left(x^2-\frac{1}{\sqrt{x}}\right)^{10}$的展开式里系数绝对值最大的项.
+    \item 求$(1+x+x^2)(1-x)^5$的展开式里的中间项.
+\end{enumerate}
+
+\item 用二项式定理证明：
+\begin{enumerate}[(1)]
+    \item $(n+1)^{n-1}$能被$n^2$整除；
+    \item $99^{10}-1$能被1000整除.
+\end{enumerate}
+
+\item 证明：
+\begin{enumerate}[(1)]
+    \item $\left(x-\frac{1}{x}\right)^{2n}$的展开式中常数项是$(-2)^n\frac{1\cdot 3\cdot 5\cdots (2n-1)}{n!}$
+    \item $(1+x)^{2n}$的展开式的中间一项是$\frac{1\cdot 3\cdot 5\cdots (2n-1)}{n!}(2x)^n$
+\end{enumerate}
+
+\item 求证：
+\begin{enumerate}[(1)]
+    \item $\sum\limits^n_{k=0}\comb{n}{n+k}=\comb{n+1}{n+m+1}$
+    \item $2^n-\comb{1}{n}2^{n-1}+\comb{2}{n}2^{n-2}+\cdots+(-1)^{n-1}\comb{n-1}{n}\cdot 2+(-1)^n=1$
+    \item $\sum\limits^n_{k=0}(2k+1)\comb{k}{n}=(n+1)2^n$
+    \item $1+2\comb{1}{n}+\comb{2}{n}+2\comb{3}{n}+\comb{4}{n}+2\comb{5}{n}+\cdots +2\comb{n-1}{n}+\comb{n}{n}=3\cdot 2^{n-1}$（其中$n$是偶数）
+\end{enumerate}
+\item 求$(1+x_1)(1+x_2)(1+x_3)\cdots(1+x_n)$的展开式里各项系数之和.
+\end{enumerate}
+
+
+\section*{本章内容要点}
+一、本章主要内容是排列与组合，二项式定理；重点是不许重复的排列与组合，二项式定理及其性质.
+
+二、两个基本原理——加法原理与乘法原理，是推导排列与组合数公式的基础，也是直接解决某些计数问题的方法. 应用中，要注意区别两个原理：
+
+加法原理与分类有关，即如果完成一件事有$n$类相互独立的办法，那么求完成这件事情的方法种数，就要用加法原理；
+
+乘法原理与分步有关，即如果完成一件事需要分$n$步完成，缺一不可，而每一步又各有若干方法，那么，求完成这件事的方法种数，就要用乘法原理。
+
+三、排列与组合的区别是看研究的问题是否与元素选取的顺序有关，与顺序有关就属于排列；与顺序无关就属于组合.
+
+排列又分为不许重复选取的全排列与选排列、可重复的排列、环形排列；
+
+组合又分为不许重复的组合与可重复的组合。
+
+四、排列与组合的计数公式有：
+\begin{enumerate}
+    \item 从$n$个不同元素中，任取$m$个没有重复的元素：
+
+排列数公式
+\begin{itemize}
+    \item 选排列：$\perm{m}{n}=n(n-1)\cdots(n-m+1)=\frac{n!}{(n-m)!}\quad (m<n)$
+    \item 全排列：$\perm{n}{n}=n!$
+\end{itemize}
+
+组合数公式：$\comb{m}{n}=\frac{\perm{m}{n}}{\perm{m}{m}}\quad (m\le n)$
+
+组合数的性质：$\comb{m}{n}=\comb{n-m}{n},\qquad \comb{m}{n+1}=\comb{m}{n}+\comb{m-1}{n}\quad (m\le n)$
+
+环形排列数公式：$\comb{m}{n}\cdot \perm{m-1}{m-1}=(m-1)! \comb{m}{n}\quad (m\le n)$
+
+\item 可重复的排列数与组合数公式：
+\begin{itemize}
+    \item 重复排列数$n^m$
+    \item 重复组合数${\rm H}^m_n=\comb{m}{n+m-1}$
+\end{itemize}
+\end{enumerate}
+
+五、二项式定理指出了二项代数利的幂的展开公式。
+\[(a+ b) ^{n}=\mathrm{C}_{n}^{0}a^{n}+{\rm C}_n^{1}a^{n- 1}b+ \cdots + \mathrm{C}_{n}^{r}a^{n- r}b^{r}+ \cdots + \mathrm{C} _{n}^{n}b^{n}\]
+其中，展开式的通项(第$r+1$项)为：
+$$\mathrm{T}_{r+1}=\mathrm{C}_{n}^{r}a^{n-r}b^{r}$$
+
+二项式的展开式中，系数、幂指数、项数等都有很好的
+性质，其中主要性质有：
+\begin{enumerate}
+    \item 
+展开式中，与首末两端“等距”的两项系数相等，
+二项式$n$次幂的展开式共有$n+1$项.
+\item 
+当 幂 指 数 $n$为 偶 数 时 , 中 间 一 项 的 系 数${\rm C}_n^{\tfrac{n}{2}}$最大(第$\frac n2+1$项); 当$n$为奇数时，中间有两项系数最大，即第$\frac{n+1}2$项的系数$C_{n}^{\tfrac{n-1}2}$与第$\frac{n+1}2+1$项的系数${\rm C}_{n}^{\tfrac{n+1}2}$相等且最大.
+\end{enumerate}
 
 \section*{复习题二}
 \begin{enumerate}
