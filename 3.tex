@@ -787,7 +787,7 @@ $E=$“$y=2$的事件”；\\$F=$“$x$或$y$是5”；\\$G=$“$x$和$y$都是5
 \end{split}\]
 
 此小题还可采用下面解法：
-“有一个击中”（$\overline{E}$），就是“甲未击中”（$\overline{A}$）且“乙未击中”（$\overline{B}$），故$\overline{E}=\overline{A}\cdot \overline{B}$. 所以：
+“没有一个击中”（$\overline{E}$），就是“甲未击中”（$\overline{A}$）且“乙未击中”（$\overline{B}$），故$\overline{E}=\overline{A}\cdot \overline{B}$. 所以：
 $$\Pr(\overline{E})=\Pr(\overline{A}\cdot \overline{B})=\Pr(\overline{A})\cdot\Pr(\overline{B})=0.4\x0.3=0.12$$
 因此：$\Pr(E)=1-\Pr(\overline{E})=1-0.12=0.88$
 \end{enumerate}
@@ -800,24 +800,26 @@ $$\Pr(\overline{E})=\Pr(\overline{A}\cdot \overline{B})=\Pr(\overline{A})\cdot\P
 
 \begin{solution}
 设需$n$枚地空-导弹同时发射，
-假设事件$A=$“敌机被击中”；“敌机未被击中”（$\overline{A}$），就是“第1枚未击中”（$\overline{A}_1$），“第2枚未击中”($\overline{A}_2$)，……，“第$n$枚未击中”（$\overline{A}_n$）同时成立，即：
-$\overline{A}_1\cdot \overline{A}_2\cdots \overline{A}_n$，而$\overline{A}_1, \overline{A}_2,\ldots,\overline{A}_n$是彼此独立的事件，因此：
+
+记事件$A=$“敌机被击中”，则“敌机未被击中”（$\overline{A}$），就是“第1枚未击中”（$\overline{A}_1$），且“第2枚未击中”($\overline{A}_2$)，……，“第$n$枚未击中”（$\overline{A}_n$）同时发生。
+
+故$\overline{A}_1\cdot \overline{A}_2\cdots \overline{A}_n$，而$\overline{A}_1, \overline{A}_2,\ldots,\overline{A}_n$是彼此独立的，所以
 \[\Pr(\overline{A})=\Pr(\overline{A}_1)\cdot \Pr(\overline{A}_2)\cdots\Pr(\overline{A}_n)=(1-0.8)^n=0.2^n\]
-要满足击中概率达99\%，即$\Pr(A)=0.99$，故
+要求击中概率达99\%，即$\Pr(A)=0.99$，故
 \[\Pr(\overline{A})=1-\Pr(A)=0.01\]
-应满足：$0.2^n=0.01$. 取对数
+所以$n$应满足：$0.2^n=0.01$. 取对数
 \[\begin{split}
     n\lg0.2&=\lg0.01\\
 n&=\frac{\lg0.01}{\lg0.2}=\frac{-2}{-0.699}\approx 3
 \end{split} \]
-答：三枚导弹同时发射能以99\%的把握击中来犯敌机．    
+答：3枚导弹同时发射能以99\%的把握击中来犯敌机．    
 \end{solution}
 
 \begin{example}
-    一个元件能正常工作的概率$r$称为该元件的可靠性，一组元件组成的系统能正常工作的概率称为系统的可靠性。假设每个使用元件的可靠性都为$r\; (0<r<1)$，且每个元件能否正常工作是相互独立的。试求下面两系统的可靠性，并
+    一个元件能正常工作的概率$r$称为该元件的可靠性，由元件组成的系统能正常工作的概率称为系统的可靠性。今设所用元件的可靠性都为$r\; (0<r<1)$，且每个元件能否正常工作是相互独立的。试求下面两系统的可靠性，并
 
 \begin{enumerate}[(1)]
-    \item 并联通路系统，它由两条$n\; (n\ge 2)$个元件串联成的通路并联而成，如下图
+    \item 附加通路系统，它由两条$n\; (n\ge 2)$个元件串联成的通路并联而成，如下图：
 \begin{center}
     \begin{circuitikz}[european]
 \draw(0,0)--(.5,0)--(.5,.5)to [R](2.5,.5) to [R] (4.5,.5)--(5,.5);
@@ -839,7 +841,7 @@ n&=\frac{\lg0.01}{\lg0.2}=\frac{-2}{-0.699}\approx 3
 
     \end{circuitikz}
 \end{center}
-    \item 附加元件系统，它由$n$对并联元件串联而成，如下图
+    \item 附加元件系统，它由$n$对并联元件串联而成，如下图：
 \begin{center}
     \begin{circuitikz}[european]
 \draw(0,0)--(.5,0)--(.5,.5) to [R] (2,.5)--(2,-.5) to [R](.5,-.5)--(.5,0);
